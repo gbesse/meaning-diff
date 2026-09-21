@@ -1,0 +1,47 @@
+{
+  "name": "@gbesse/meaning-diff",
+  "version": "0.1.0",
+  "description": "Review meaning changes in Markdown and text with provenance, parser plugins and optional Jev classification.",
+  "type": "module",
+  "exports": {
+    ".": {
+      "types": "./src/index.d.mts",
+      "import": "./src/index.mjs"
+    },
+    "./jev": {
+      "types": "./src/jev.d.mts",
+      "import": "./src/jev.mjs"
+    }
+  },
+  "bin": {
+    "meaning-diff": "./bin/meaning-diff.mjs"
+  },
+  "files": [
+    "src",
+    "bin",
+    "examples",
+    "README.md",
+    "LICENSE",
+    "docs/plugins.md"
+  ],
+  "scripts": {
+    "check": "node scripts/check.mjs",
+    "typecheck": "tsc --noEmit --strict --target ES2022 --module NodeNext docs/public-api-types.mts",
+    "test": "node --test",
+    "demo": "node examples/demo.mjs"
+  },
+  "engines": {
+    "node": ">=22"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gbesse/meaning-diff.git"
+  },
+  "dependencies": {
+    "@gbesse/decisionpacks": "git+https://github.com/gbesse/decisionpacks.git#3c90b6e667c16653b9a6ae00b376df9bddbd8461"
+  },
+  "devDependencies": {
+    "typescript": "5.9.3"
+  }
+}

@@ -32,7 +32,7 @@ const result = await review(diff, {
 console.log(toMarkdown(result));
 ```
 
-Install the released package from GitHub with `npm install github:gbesse/meaning-diff#v0.1.0`. No npm registry release is implied.
+Install the released package from GitHub with `npm install github:gbesse/meaning-diff#v0.1.1`. No npm registry release is implied.
 
 JSON reports retain before/after text, source line numbers and SHA-256 fingerprints. Classification categories are editorial, strengthened, weakened, contradiction, behavior_changed and uncertain. Low-probability judgments become uncertain. Every classified change remains marked for review. Review budgets fail before model calls; provider errors fail the operation.
 
@@ -54,6 +54,10 @@ npm run demo
 Tests cover provenance tampering, budgets, parser edge cases, CLI artifacts and the HTTP adapter using loopback fixtures. Live model quality has not been evaluated. The Jev adapter uses the pinned [DecisionPacks](https://github.com/gbesse/decisionpacks) contract and a default 30-second deadline.
 
 Source text can contain confidential data. `--jev` sends changed sections to Typesafe; custom modules are trusted executable code. See [SECURITY.md](SECURITY.md).
+
+## Shareable demo report
+
+Run `npm run demo:report` to capture this repository’s bundled example as one JSON object with the project purpose, version and complete demo output. The command fails if the demo fails, so the report is useful when sharing a reproducible first look or reporting unexpected behavior. The bundled demo’s data and safety boundaries still apply.
 
 ## Where this can grow
 
